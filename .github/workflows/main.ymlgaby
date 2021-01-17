@@ -1,9 +1,9 @@
-name: Build
+name: anakernel
 
-on: [push]
+on: anakernel
 
 env:
-  TOOLCHAIN: default
+  TOOLCHAIN: default				
   INSTALLER: yes
 
 jobs:
@@ -23,9 +23,12 @@ jobs:
                      model=${{ matrix.model }} \
                      name="Cruel-V3.9"         \
                      toolchain=$TOOLCHAIN      \
-                     +magisk                   \
+                     +magisk=v20.3                   \
                      +nohardening              \
                      +ttl                      \
+										 +io_maple                 \
+                     +sched                    \
+                     +300hz                    \
                      +wireguard                \
                      +cifs                     \
                      +sdfat                    \
